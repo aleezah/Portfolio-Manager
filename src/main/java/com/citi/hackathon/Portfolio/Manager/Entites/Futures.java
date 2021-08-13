@@ -33,11 +33,11 @@ public class Futures implements Serializable {
 
 
     //Getter and Setter
-    public Integer getStockID() {
+    public Integer getFuturesID() {
         return futuresID;
     }
 
-    public void setStockID(Integer stockID) {
+    public void setFuturesID(Integer stockID) {
         this.futuresID = futuresID;
     }
 
@@ -69,7 +69,7 @@ public class Futures implements Serializable {
         return numberOfFutures;
     }
 
-    public void setNumberOfStocks(Integer numberOfStocks) {
+    public void setNumberOfFutures(Integer numberOfFutures) {
         this.numberOfFutures = numberOfFutures;
     }
 

@@ -19,4 +19,25 @@ public class CashAccountServiceImpl implements CashAccountService {
      return cashAccountRepository.findAll();
     }
 
+    @Override
+    public CashAccount addNewCashAccount(CashAccount account) {
+        return cashAccountRepository.save(account);
+    }
+    @Override
+    public CashAccount updateCashAccount(CashAccount account) {
+        return cashAccountRepository.save(account);
+    }
+
+    @Override
+    public void deleteCashAccount(int id) {
+        CashAccount toBeDeleted = cashAccountRepository.findById(id).get();
+        deleteCashAccount(toBeDeleted);
+
+    }
+
+    @Override
+    public void deleteCashAccount(CashAccount account) {
+        cashAccountRepository.delete(account);
+    }
 }
+

@@ -5,4 +5,11 @@ import java.util.concurrent.Future;
 
 public interface FutureService {
     List<Future> getAllFutures();
+    Future addNewFuture(Future fut);
+
+    void deleteFuture(int id);
+
+    void deleteFuture(Future fut);
+
+    Future updateFuture(Future fut);
 }
