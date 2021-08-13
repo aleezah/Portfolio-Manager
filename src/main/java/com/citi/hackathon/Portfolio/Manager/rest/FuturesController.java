@@ -1,11 +1,11 @@
 package com.citi.hackathon.Portfolio.Manager.rest;
 
+import com.citi.hackathon.Portfolio.Manager.Entites.Futures;
 import com.citi.hackathon.Portfolio.Manager.service.FutureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping("/Futures")
@@ -15,7 +15,7 @@ public class FuturesController {
     private FutureService futureService;
 
     @GetMapping
-    public List<Future> getFutures() {
+    public List<Futures> getFutures() {
         return futureService.getAllFutures();
     }
 
@@ -25,12 +25,12 @@ public class FuturesController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public void deleteFuture(@RequestBody Future fut) {
+    public void deleteFuture(@RequestBody Futures fut) {
         futureService.deleteFuture(fut);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void addFuture(@RequestBody Future fut) {
+    public void addFuture(@RequestBody Futures fut) {
         futureService.addNewFuture(fut);
     }
 

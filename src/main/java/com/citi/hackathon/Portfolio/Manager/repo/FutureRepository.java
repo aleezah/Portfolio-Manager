@@ -1,11 +1,11 @@
 package com.citi.hackathon.Portfolio.Manager.repo;
 
+import com.citi.hackathon.Portfolio.Manager.Entites.Futures;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Collection;
-import java.util.concurrent.Future;
 
-public interface FutureRepository extends JpaRepository<Future, Integer> {
+public interface FutureRepository extends JpaRepository<Futures, Integer> {
 
-    Collection<Future> findByID(Integer id);
+    Collection<Futures> findByID(Integer id);
 }

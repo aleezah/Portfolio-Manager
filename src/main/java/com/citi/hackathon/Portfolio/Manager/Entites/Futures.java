@@ -2,9 +2,7 @@ package com.citi.hackathon.Portfolio.Manager.Entites;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Futures")

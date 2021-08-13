@@ -1,10 +1,10 @@
 package com.citi.hackathon.Portfolio.Manager.service;
 
+import com.citi.hackathon.Portfolio.Manager.Entites.Futures;
 import com.citi.hackathon.Portfolio.Manager.repo.FutureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.concurrent.Future;
 
 @Service
 public class FuturesServiceImpl implements FutureService {
@@ -13,29 +13,29 @@ public class FuturesServiceImpl implements FutureService {
     private FutureRepository futureRepository;
 
     @Override
-    public List<Future> getAllFutures() {
+    public List<Futures> getAllFutures() {
         return futureRepository.findAll();
     }
 
     @Override
-    public Future addNewFuture(Future fut) {
+    public Futures addNewFuture(Futures fut) {
         return futureRepository.save(fut);
     }
 
     @Override
-    public Future updateFuture(Future fut) {
+    public Futures updateFuture(Futures fut) {
         return futureRepository.save(fut);
     }
 
     @Override
     public void deleteFuture(int id) {
-        Future toBeDeleted = futureRepository.findById(id).get();
+        Futures toBeDeleted = futureRepository.findById(id).get();
         deleteFuture(toBeDeleted);
 
     }
 
     @Override
-    public void deleteFuture(Future fut) {
+    public void deleteFuture(Futures fut) {
         futureRepository.delete(fut);
     }
 

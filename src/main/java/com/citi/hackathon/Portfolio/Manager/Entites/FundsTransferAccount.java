@@ -1,7 +1,6 @@
 package com.citi.hackathon.Portfolio.Manager.Entites;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "Funds Transfer Account")
