@@ -1,8 +1,6 @@
 package com.citi.hackathon.Portfolio.Manager.rest;
 
-import com.citi.hackathon.Portfolio.Manager.Entites.CashAccount;
 import com.citi.hackathon.Portfolio.Manager.Entites.FundsTransferAccount;
-import com.citi.hackathon.Portfolio.Manager.service.CashAccountService;
 import com.citi.hackathon.Portfolio.Manager.service.FundsTransferAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

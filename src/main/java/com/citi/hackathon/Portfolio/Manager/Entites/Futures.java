@@ -13,8 +13,8 @@ public class Futures implements Serializable {
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "FuturesID")
-    private Integer futuresID;
+    @Column(name = "Futures ID")
+    private Integer id;
 
     @Column(name = "TimeBought")
     private Date timeBought;
@@ -28,17 +28,17 @@ public class Futures implements Serializable {
     @Column(name = "NumberOfFutures")
     private Integer numberOfFutures;
 
-    @Column(name = "investmentaccountID")
+    @Column(name = "investment Account ID")
     private Integer investmentAccountId;
 
 
     //Getter and Setter
     public Integer getFuturesID() {
-        return futuresID;
+        return id;
     }
 
-    public void setFuturesID(Integer stockID) {
-        this.futuresID = futuresID;
+    public void setFuturesID(Integer futuresID) {
+        this.id = futuresID;
     }
 
     public Date getTimeBought() {
@@ -84,7 +84,7 @@ public class Futures implements Serializable {
 
     //Constructors
     public Futures(Integer futuresID, Date timeBought, String name, Double purchasePrice, Integer numberOfFutures, Integer investmentAccountId) {
-        this.futuresID = futuresID;
+        this.id = futuresID;
         this.timeBought = timeBought;
         this.name = name;
         this.purchasePrice = purchasePrice;
