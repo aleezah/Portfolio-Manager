@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class InvestmentAccountServiceImpl implements InvestmentAccountService {
@@ -17,4 +18,33 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService {
     public Collection<InvestmentAccount> getAllInvestmentAccounts() {
         return investmentAccountRepository.findAll();
     }
+
+    @Override
+    public InvestmentAccount getInvestmentAccountById(int id) {
+        Optional<InvestmentAccount> investmentAccountOptional = investmentAccountRepository.findById(id);
+        if(investmentAccountOptional.isPresent()) {
+            return investmentAccountOptional.get();
+        }
+        else return null;
+    }
+
+    @Override
+    public InvestmentAccount addNewInvestmentAccount(InvestmentAccount investmentAccount){
+        //I think we don't have to set the id
+
+        return investmentAccountRepository.save(investmentAccount);
+    };
+
+    @Override
+    public void deleteInvestmentAccount(int id){
+        InvestmentAccount toBeDeleted = investmentAccountRepository.findById(id).get();
+       investmentAccountRepository.delete(toBeDeleted);
+    };
+
+    @Override
+    public void deleteInvestmentAccount(InvestmentAccount investmentAccount){
+        investmentAccountRepository.delete(investmentAccount);
+    };
+
+
 }
