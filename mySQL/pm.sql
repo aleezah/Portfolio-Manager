@@ -74,11 +74,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Stocks` (
   `Name` VARCHAR(45) NOT NULL,
   `Purchase Price` DECIMAL(2) NOT NULL,
   `NumberOfStocks` INT NOT NULL,
-  `investmentAccountID` INT NOT NULL,
+  `investmentaccountID` INT NOT NULL,
   PRIMARY KEY (`StockID`),
   UNIQUE INDEX `idStocks_UNIQUE` (`StockID` ASC) VISIBLE,
-  CONSTRAINT `InvestmentAccountID`
-    FOREIGN KEY (`investmentAccountID`)
+  CONSTRAINT `investmentaccountIDStocks`
+    FOREIGN KEY (`investmentaccountID`)
     REFERENCES `mydb`.`Investment Account` (`InvestmentAccountID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Stock Transaction` (
     REFERENCES `mydb`.`Stocks` (`StockID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `investmentAccountID`
+  CONSTRAINT `investmentAccountIDStocksTx`
     FOREIGN KEY (`investmentAccountID`)
     REFERENCES `mydb`.`Investment Account` (`InvestmentAccountID`)
     ON DELETE NO ACTION
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ETF` (
   `NumeberOfETF` INT NOT NULL,
   PRIMARY KEY (`etfID`),
   UNIQUE INDEX `etfID_UNIQUE` (`etfID` ASC) VISIBLE,
-  CONSTRAINT `InvestmentAccountID`
+  CONSTRAINT `InvestmentAccountIETF`
     FOREIGN KEY (`InvestmentAccountID`)
     REFERENCES `mydb`.`Investment Account` (`InvestmentAccountID`)
     ON DELETE NO ACTION
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Futures` (
   `InvestmentAccountID` INT NOT NULL,
   PRIMARY KEY (`FuturesID`),
   UNIQUE INDEX `FuturesID_UNIQUE` (`FuturesID` ASC) VISIBLE,
-  CONSTRAINT `InvestmentAccountID`
+  CONSTRAINT `InvestmentAccountIDFutures`
     FOREIGN KEY (`InvestmentAccountID`)
     REFERENCES `mydb`.`Investment Account` (`InvestmentAccountID`)
     ON DELETE NO ACTION
