@@ -10,13 +10,11 @@ public class CashAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
     @Column(name = "Funds")
     private Double Funds;
 
     @Column(name = "Account Type")
     private String accountType;
-
 
     public Integer getId() {
         return id;
@@ -24,6 +22,21 @@ public class CashAccount {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Double getFunds() {
+        return Funds;
+    }
+
+    public void setFunds(Double funds) {
+        Funds = funds;
+    }
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
 
