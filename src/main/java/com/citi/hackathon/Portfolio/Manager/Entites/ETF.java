@@ -13,49 +13,49 @@ public class ETF {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "etfID")
-    private int etfID;
+    private Integer etfID;
 
     @Column(name = "Name")
-    private String Name;
+    private String name;
 
     @Column(name = "PurchasePrice")
-    private Double PurchasePrice;
+    private Double purchasePrice;
 
     //there is a typo in the name of this one?
     @Column(name = "InvestmentAccountIETF")
-    private  int InvestmentAccountIDETF;
+    private  Integer investmentAccountIDETF;
 
     @Column(name = "TimeBought")
-    private Date TimeBought;
+    private Date timeBought;
 
     //sql has a typo
     @Column(name = "NumeberOfETF")
-    private int NumberOfETF;
+    private int numberOfETF;
 
     //get and set methods
 
-    public int getEtfID() {
+    public Integer getEtfID() {
         return etfID;
     }
 
     public Date getTimeBought() {
-        return TimeBought;
+        return timeBought;
     }
 
     public Double getPurchasePrice() {
-        return PurchasePrice;
+        return purchasePrice;
     }
 
-    public int getInvestmentAccountIDETF() {
-        return InvestmentAccountIDETF;
+    public Integer getInvestmentAccountIDETF() {
+        return investmentAccountIDETF;
     }
 
-    public int getNumberOfETF() {
-        return NumberOfETF;
+    public Integer getNumberOfETF() {
+        return numberOfETF;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setEtfID(int etfID) {
@@ -63,24 +63,36 @@ public class ETF {
     }
 
     public void setInvestmentAccountIDETF(int investmentAccountIDETF) {
-        InvestmentAccountIDETF = investmentAccountIDETF;
+        this.investmentAccountIDETF = investmentAccountIDETF;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setNumberOfETF(int numberOfETF) {
-        NumberOfETF = numberOfETF;
+        this.numberOfETF = numberOfETF;
     }
 
     public void setPurchasePrice(Double purchasePrice) {
-        PurchasePrice = purchasePrice;
+        this.purchasePrice = purchasePrice;
     }
 
     public void setTimeBought(Date timeBought) {
-        TimeBought = timeBought;
+        this.timeBought = timeBought;
     }
+
+
+    // constructor
+    public ETF(String name, Double purchasePrice, Integer investmentAccountIDETF, Date timeBought, Integer numberOfETF){
+        this.name = name;
+        this.purchasePrice = purchasePrice;
+        this.investmentAccountIDETF = investmentAccountIDETF;
+        this.timeBought = timeBought;
+        this.numberOfETF = numberOfETF;
+    }
+
+
     //    //Adding Relationship
 //
 //    @JoinColumn(name = "InvestmentAccountIETF", referencedColumnName = "InvestmentAccountID")
@@ -96,20 +108,3 @@ public class ETF {
 //    }
 
 }
-
-
-//    CREATE TABLE IF NOT EXISTS `mydb`.`ETF` (
-//        `etfID` INT NOT NULL,
-//        `Name` VARCHAR(45) NOT NULL,
-//        `PurchasePrice` DECIMAL(2) NOT NULL,
-//        `InvestmentAccountIETF` INT NOT NULL,
-//        `TimeBought` DATETIME NOT NULL,
-//        `NumeberOfETF` INT NOT NULL,
-//        PRIMARY KEY (`etfID`),
-//        UNIQUE INDEX `etfID_UNIQUE` (`etfID` ASC) VISIBLE,
-//        CONSTRAINT `InvestmentAccountID`
-//        FOREIGN KEY (`InvestmentAccountIETF`)
-//        REFERENCES `mydb`.`Investment Account` (`InvestmentAccountID`)
-//        ON DELETE NO ACTION
-//        ON UPDATE NO ACTION)
-//        ENGINE = InnoDB;
