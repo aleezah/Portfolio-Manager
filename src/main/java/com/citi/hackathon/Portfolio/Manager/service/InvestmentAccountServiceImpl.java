@@ -21,11 +21,8 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService {
 
     @Override
     public InvestmentAccount getInvestmentAccountById(int id) {
-        Optional<InvestmentAccount> investmentAccountOptional = investmentAccountRepository.findById(id);
-        if(investmentAccountOptional.isPresent()) {
-            return investmentAccountOptional.get();
-        }
-        else return null;
+        InvestmentAccount investmentAccount = investmentAccountRepository.findByInvestmentaccountid(id);
+        return investmentAccount;
     }
 
     @Override

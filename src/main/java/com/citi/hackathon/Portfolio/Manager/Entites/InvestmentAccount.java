@@ -24,6 +24,10 @@ public class InvestmentAccount implements Serializable {
         this.funds = funds;
     }
 
+    public InvestmentAccount(double funds) {
+        this.funds = funds;
+    }
+
     public int getInvestmentaccountid() {
         return investmentaccountid;
     }

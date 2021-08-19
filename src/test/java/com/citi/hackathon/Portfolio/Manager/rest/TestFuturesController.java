@@ -21,6 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +52,9 @@ public class TestFuturesController {
     @Test
     public void testCanRetrieveAllFutures() throws Exception {
 
-        Futures future = new Futures(2, new Date(2021,02,23),  "Future",324.98, 12, 4);
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh.mm.ss");
+
+        Futures future = new Futures(2, ft.parse("2020-05-06 10:45:06"), "Oil-Future", ft.parse("2020-07-06 10:45:06"),324.98, 12, 4);
         List<Futures> allFutures = Arrays.asList(future);
 
         given(service.getAllFutures()).willReturn(allFutures);

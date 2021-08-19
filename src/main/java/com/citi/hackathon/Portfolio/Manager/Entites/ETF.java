@@ -92,6 +92,13 @@ public class ETF {
     }
 
 
+    public ETF(String etfname, Double purchaseprice, Date timebought, int numberofetf, Integer investmentaccountidetf) {
+        this.etfname = etfname;
+        this.purchaseprice = purchaseprice;
+        this.timebought = timebought;
+        this.numberofetf = numberofetf;
+        this.investmentaccountidetf = investmentaccountidetf;
+    }
 
     public ETF() {
 

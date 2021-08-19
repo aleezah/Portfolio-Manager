@@ -21,7 +21,7 @@ public class StockTransactionServiceImpl implements StockTransactionService {
 
     @Override
     public Iterable<StockTransaction> getAllTransactionByStockID(Integer stock_ID){
-        return stockTxDAO.findByStockid(stock_ID);
+        return stockTxDAO.findByStockidtx(stock_ID);
     }
 
 }

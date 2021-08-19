@@ -21,6 +21,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -50,9 +52,11 @@ public class TestETFController {
 
     @Test
     public void testCanRetrieveAllETFs() throws Exception {
+        Date testDate = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh.mm.ss");
 
-        ETF ETF = new ETF("S&P 500", 500.01, 1, new Date(2020,1,31), 5);
-        List<ETF> allETFs = Arrays.asList(ETF);
+        ETF etf = new ETF("S&P 500", 500.01, ft.parse("2020-05-06 10:45:06"),1, 5);
+        List<ETF> allETFs = Arrays.asList(etf);
 
         given(service.getAllETFs()).willReturn(allETFs);
 

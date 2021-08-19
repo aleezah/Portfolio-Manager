@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ETFRepository extends JpaRepository<ETF, Integer> {
 
-    public List<ETF> findByEtfID(Integer etf_ID);
+    public List<ETF> findByEtfid(Integer etf_ID);
 
 }

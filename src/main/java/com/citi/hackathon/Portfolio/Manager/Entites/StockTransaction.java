@@ -28,8 +28,8 @@ public class StockTransaction implements Serializable{
     @Column(name = "stockname")
     private String stockname;
 
-    @Column(name = "stockid")
-    private Integer stockid;
+    @Column(name = "stockidtx")
+    private Integer stockidtx;
 
     @Column(name = "investmentaccountidtx")
     private Integer investmentaccountidtx;
@@ -77,12 +77,12 @@ public class StockTransaction implements Serializable{
         this.stockname = stockname;
     }
 
-    public Integer getStockid() {
-        return stockid;
+    public Integer getStockidtx() {
+        return stockidtx;
     }
 
-    public void setStockid(Integer stockid) {
-        this.stockid = stockid;
+    public void setStockidtx(Integer stockid) {
+        this.stockidtx = stockid;
     }
 
     public Integer getInvestmentaccountidtx() {
@@ -96,13 +96,13 @@ public class StockTransaction implements Serializable{
     //Constructor
 
 
-    public StockTransaction(Integer transactionid, Date transactiontime, Double amount, String transactiontype, String stockname, Integer stockid, Integer investmentaccountidtx) {
+    public StockTransaction(Integer transactionid, Date transactiontime, Double amount, String transactiontype, String stockname, Integer stockidtx, Integer investmentaccountidtx) {
         this.transactionid = transactionid;
         this.transactiontime = transactiontime;
         this.amount = amount;
         this.transactiontype = transactiontype;
         this.stockname = stockname;
-        this.stockid = stockid;
+        this.stockidtx = stockidtx;
         this.investmentaccountidtx = investmentaccountidtx;
     }
 

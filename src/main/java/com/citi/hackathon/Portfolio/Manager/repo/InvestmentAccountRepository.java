@@ -9,5 +9,6 @@ import java.util.List;
 
 public interface InvestmentAccountRepository extends JpaRepository<InvestmentAccount, Integer> {
 
+    public InvestmentAccount findByInvestmentaccountid(Integer id);
 
 }

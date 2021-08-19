@@ -21,6 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -50,7 +51,8 @@ public class TestStockTransactionController {
 
     @Test
     public void testCanRetrieveAllStockTransactions() throws Exception {
-        StockTransaction StockTransaction = new StockTransaction(1, new Date(2015,8, 17), 60.54, "Purchase Stocks", "GOOGL", 3, 4);
+        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh.mm.ss");
+        StockTransaction StockTransaction = new StockTransaction(1, ft.parse("2020-05-06 10:45:06"), 60.54, "Purchase Stocks", "GOOGL", 3, 4);
             List<StockTransaction> allStockTransactions = Arrays.asList(StockTransaction);
 
         given(service.getAllStockTransaction()).willReturn(allStockTransactions);

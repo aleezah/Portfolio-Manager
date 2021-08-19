@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public interface CashAccountRepository extends JpaRepository <CashAccount,Integer> {
 
-    Collection<CashAccount> findByAccountType(String accountType);
+    Collection<CashAccount> findByAccounttype(String accountType);
 
 
 }
