@@ -4,13 +4,14 @@ import com.citi.hackathon.Portfolio.Manager.Entites.Futures;
 
 import java.util.List;
 
+
 public interface FutureService {
     List<Futures> getAllFutures();
-    Futures addNewFuture(Futures fut);
+    Futures addNewFutures(Futures fut);
 
-    void deleteFuture(int id);
+    void deleteFutures(int id);
 
-    void deleteFuture(Futures fut);
+    void deleteFutures(Futures fut);
 
-    Futures updateFuture(Futures fut);
+    Futures updateFutures(Futures fut);
 }

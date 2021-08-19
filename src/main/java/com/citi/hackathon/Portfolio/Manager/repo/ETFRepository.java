@@ -4,8 +4,10 @@ import com.citi.hackathon.Portfolio.Manager.Entites.ETF;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface ETFRepository extends JpaRepository<ETF, Integer> {
 
-    Collection<ETF> findByID(Integer id);
+    public List<ETF> findByEtfID(Integer etf_ID);
+
 }

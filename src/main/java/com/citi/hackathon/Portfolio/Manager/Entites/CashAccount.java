@@ -10,12 +10,12 @@ import java.util.List;
 public class CashAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "CashAccountID")
     private Integer id;
     @Column(name = "Funds")
     private Double Funds;
 
-    @Column(name = "Account Type")
+    @Column(name = "AccountType")
     private String accountType;
 
     public CashAccount(int i, double f,String t){
@@ -56,7 +56,7 @@ public class CashAccount {
     //Adding Relationship
 //FINISH WHEN DONE
 
-    @JoinColumn(name = "FundsTransferAccount", referencedColumnName = "FundsTransferAccountID")
+    @JoinColumn(name = "cashAccountID", referencedColumnName = "CashAccountID")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<FundsTransferAccount> fundsTransfer= new ArrayList<FundsTransferAccount>();
 

@@ -1,42 +1,44 @@
 package com.citi.hackathon.Portfolio.Manager.service;
 
 import com.citi.hackathon.Portfolio.Manager.Entites.Futures;
-import com.citi.hackathon.Portfolio.Manager.repo.FutureRepository;
+
+import com.citi.hackathon.Portfolio.Manager.repo.FuturesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.concurrent.Future;
 
 @Service
 public class FuturesServiceImpl implements FutureService {
 
     @Autowired
-    private FutureRepository futureRepository;
+    private FuturesRepository futuresRepository;
 
     @Override
     public List<Futures> getAllFutures() {
-        return futureRepository.findAll();
+        return futuresRepository.findAll();
     }
 
     @Override
-    public Futures addNewFuture(Futures fut) {
-        return futureRepository.save(fut);
+    public Futures addNewFutures(Futures fut) {
+        return futuresRepository.save(fut);
     }
 
     @Override
-    public Futures updateFuture(Futures fut) {
-        return futureRepository.save(fut);
+    public Futures updateFutures(Futures fut) {
+        return futuresRepository.save(fut);
     }
 
     @Override
-    public void deleteFuture(int id) {
-        Futures toBeDeleted = futureRepository.findById(id).get();
-        deleteFuture(toBeDeleted);
+    public void deleteFutures(int id) {
+        Futures toBeDeleted = futuresRepository.findById(id).get();
+        deleteFutures(toBeDeleted);
 
     }
 
     @Override
-    public void deleteFuture(Futures fut) {
-        futureRepository.delete(fut);
+    public void deleteFutures(Futures fut) {
+        futuresRepository.delete(fut);
     }
 
 }

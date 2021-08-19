@@ -22,7 +22,7 @@ public class Stocks implements Serializable {
     @Column(name = "Name")
     private String name;
 
-    @Column(name = "Purchase Price")
+    @Column(name = "PurchasePrice")
     private Double purchasePrice;
 
     @Column(name = "NumberOfStocks")

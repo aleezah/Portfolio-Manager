@@ -21,17 +21,17 @@ public class FuturesController {
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     public void deleteFuture(@PathVariable("id") int id) {
-        futureService.deleteFuture(id);
+        futureService.deleteFutures(id);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
     public void deleteFuture(@RequestBody Futures fut) {
-        futureService.deleteFuture(fut);
+        futureService.deleteFutures(fut);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public void addFuture(@RequestBody Futures fut) {
-        futureService.addNewFuture(fut);
+        futureService.addNewFutures(fut);
     }
 
 

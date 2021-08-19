@@ -11,7 +11,7 @@ public class Futures implements Serializable {
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Futures ID")
+    @Column(name = "FuturesID")
     private Integer id;
 
     @Column(name = "TimeBought")
@@ -20,13 +20,13 @@ public class Futures implements Serializable {
     @Column(name = "Name")
     private String name;
 
-    @Column(name = "Purchase Price")
+    @Column(name = "PurchasePrice")
     private Double purchasePrice;
 
     @Column(name = "NumberOfFutures")
     private Integer numberOfFutures;
 
-    @Column(name = "investment Account ID")
+    @Column(name = "InvestmentAccountID")
     private Integer investmentAccountId;
 
 

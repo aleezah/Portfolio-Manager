@@ -3,7 +3,7 @@ package com.citi.hackathon.Portfolio.Manager.Entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Funds Transfer Account")
+@Table(name = "fundstransferaccount")
 public class FundsTransferAccount {
 
     //Columns
@@ -15,14 +15,14 @@ public class FundsTransferAccount {
     @Column(name = "Funds")
     private double funds;
 
-    @Column(name = "Transfer Type")
+    @Column(name = "transferType")
     private String transferType;
 
 
-    @Column(name = "Cash Account ID")
+    @Column(name = "cashAccountID")
     private Integer cashAccountID;
 
-    @Column(name = "Investment Account ID")
+    @Column(name = "investmentAccountID")
     private Integer investmentAccountId;
 
     public FundsTransferAccount(Integer fundsTransferAccountID, double funds, String transferType, Integer cashAccountID, Integer investmentAccountId) {
@@ -65,16 +65,16 @@ public class FundsTransferAccount {
         return cashAccountID;
     }
 
-    public void setCashAccountID(Integer cashAccountID) {
-        this.cashAccountID = cashAccountID;
+    public void setCashAccountID(Integer cashAccount) {
+        this.cashAccountID = cashAccount;
     }
 
     public Integer getInvestmentAccountId() {
         return investmentAccountId;
     }
 
-    public void setInvestmentAccountId(Integer investmentAccountId) {
-        this.investmentAccountId = investmentAccountId;
+    public void setInvestmentAccountId(Integer investmentAccount) {
+        this.investmentAccountId = investmentAccount;
     }
 
 

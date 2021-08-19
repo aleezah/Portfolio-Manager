@@ -45,7 +45,7 @@ public class InvestmentAccount implements Serializable {
     }
 
     // add connection to stock
-    @JoinColumn(name = "InvestmentAccountID", referencedColumnName = "investmentAccountID")
+    @JoinColumn(name = "investmentaccountID", referencedColumnName = "InvestmentAccountID")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Stocks> listOfStocks= new ArrayList<Stocks>();
 
@@ -59,7 +59,7 @@ public class InvestmentAccount implements Serializable {
 
 
     // add connection to stock transaction
-    @JoinColumn(name = "InvestmentAccountID", referencedColumnName = "investmentAccountID")
+    @JoinColumn(name = "investmentAccountID", referencedColumnName = "InvestmentAccountID")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 
