@@ -5,58 +5,59 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="cash_account")
+@Table(name="cashaccount")
 
 public class CashAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cash_account_id")
-    private Integer id;
+    @Column(name = "cashaccountid")
+    private Integer cashaccountid;
     @Column(name = "funds")
-    private Double Funds;
-
-    @Column(name = "account_type")
-    private String accountType;
-
-    public CashAccount(int i, double f,String t){
-        id=i;
-        Funds=f;
-        accountType=t;
-
-    }
+    private Double funds;
+    @Column(name = "accounttype")
+    private String accounttype;
 
     public CashAccount() {
 
     }
 
-    public Integer getId() {
-        return id;
+    public CashAccount(Integer cashaccountid, Double funds, String accounttype) {
+        this.cashaccountid = cashaccountid;
+        this.funds = funds;
+        this.accounttype = accounttype;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Integer getCashaccountid() {
+        return cashaccountid;
+    }
+
+    public void setCashaccountid(Integer cashaccountid) {
+        this.cashaccountid = cashaccountid;
     }
 
     public Double getFunds() {
-        return Funds;
+        return funds;
     }
 
     public void setFunds(Double funds) {
-        Funds = funds;
-    }
-    public String getAccountType() {
-        return accountType;
+        this.funds = funds;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public String getAccounttype() {
+        return accounttype;
+    }
+
+    public void setAccounttype(String accountype) {
+        this.accounttype = accountype;
     }
 
 
-    //Adding Relationship
+
+
+//Adding Relationship
 //FINISH WHEN DONE
-
-    @JoinColumn(name = "cash_account_id", referencedColumnName = "cash_account_id")
+/*
+    @JoinColumn(name = "cashaccountid", referencedColumnName = "cashaccountid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<FundsTransferAccount> fundsTransfer= new ArrayList<FundsTransferAccount>();
 
@@ -68,5 +69,5 @@ public class CashAccount {
         this.fundsTransfer = funds;
     }
 
-
+*/
 }

@@ -12,25 +12,86 @@ public class ETF {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "etf_id")
-    private Integer etfID;
+    @Column(name = "etfid")
+    private Integer etfid;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "etfname")
+    private String etfname;
 
-    @Column(name = "purchase_price")
-    private Double purchasePrice;
+    @Column(name = "purchaseprice")
+    private Double purchaseprice;
 
-    //there is a typo in the name of this one?
-    @Column(name = "investment_account_id_etf")
-    private  Integer investmentAccountIDETF;
-
-    @Column(name = "time_bought")
-    private Date timeBought;
+    @Column(name = "timebought")
+    private Date timebought;
 
     //sql has a typo
-    @Column(name = "numeber_of_etf")
-    private int numberOfETF;
+    @Column(name = "numeberofetf")
+    private int numberofetf;
+
+    //there is a typo in the name of this one?
+    @Column(name = "investmentaccountidetf")
+    private  Integer investmentaccountidetf;
+
+    public Integer getEtfid() {
+        return etfid;
+    }
+
+    public void setEtfid(Integer etfid) {
+        this.etfid = etfid;
+    }
+
+    public String getEtfname() {
+        return etfname;
+    }
+
+    public void setEtfname(String etfname) {
+        this.etfname = etfname;
+    }
+
+    public Double getPurchaseprice() {
+        return purchaseprice;
+    }
+
+    public void setPurchaseprice(Double purchaseprice) {
+        this.purchaseprice = purchaseprice;
+    }
+
+    public Integer getInvestmentaccountidetf() {
+        return investmentaccountidetf;
+    }
+
+    public void setInvestmentaccountidetf(Integer investmentaccountidetf) {
+        this.investmentaccountidetf = investmentaccountidetf;
+    }
+
+    public Date getTimebought() {
+        return timebought;
+    }
+
+    public void setTimebought(Date timebought) {
+        this.timebought = timebought;
+    }
+
+    public int getNumberofetf() {
+        return numberofetf;
+    }
+
+    public void setNumberofetf(int numberofetf) {
+        this.numberofetf = numberofetf;
+    }
+
+
+
+    public ETF(Integer etfid, String etfname, Double purchaseprice, Integer investmentaccountidetf, Date timebought, int numberofetf) {
+        this.etfid = etfid;
+        this.etfname = etfname;
+        this.purchaseprice = purchaseprice;
+        this.investmentaccountidetf = investmentaccountidetf;
+        this.timebought = timebought;
+        this.numberofetf = numberofetf;
+    }
+
+
 
     public ETF() {
 
@@ -38,63 +99,6 @@ public class ETF {
 
     //get and set methods
 
-    public Integer getEtfID() {
-        return etfID;
-    }
-
-    public Date getTimeBought() {
-        return timeBought;
-    }
-
-    public Double getPurchasePrice() {
-        return purchasePrice;
-    }
-
-    public Integer getInvestmentAccountIDETF() {
-        return investmentAccountIDETF;
-    }
-
-    public Integer getNumberOfETF() {
-        return numberOfETF;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setEtfID(int etfID) {
-        this.etfID = etfID;
-    }
-
-    public void setInvestmentAccountIDETF(int investmentAccountIDETF) {
-        this.investmentAccountIDETF = investmentAccountIDETF;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNumberOfETF(int numberOfETF) {
-        this.numberOfETF = numberOfETF;
-    }
-
-    public void setPurchasePrice(Double purchasePrice) {
-        this.purchasePrice = purchasePrice;
-    }
-
-    public void setTimeBought(Date timeBought) {
-        this.timeBought = timeBought;
-    }
-
-
-    // constructor
-    public ETF(String name, Double purchasePrice, Integer investmentAccountIDETF, Date timeBought, Integer numberOfETF){
-        this.name = name;
-        this.purchasePrice = purchasePrice;
-        this.investmentAccountIDETF = investmentAccountIDETF;
-        this.timeBought = timeBought;
-        this.numberOfETF = numberOfETF;
-    }
 
 
     //    //Adding Relationship

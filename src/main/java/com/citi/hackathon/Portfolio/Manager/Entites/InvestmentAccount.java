@@ -8,45 +8,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="investment account")
+@Table(name="investmentaccount")
 public class InvestmentAccount implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "investment_account_id")
-    private int InvestmentAccountID;
+    @Column(name = "investmentaccountid")
+    private int investmentaccountid;
 
     @Column(name = "funds")
-    private double Funds;
+    private double funds;
+
+    public InvestmentAccount(int investmentaccountid, double funds) {
+        this.investmentaccountid = investmentaccountid;
+        this.funds = funds;
+    }
+
+    public int getInvestmentaccountid() {
+        return investmentaccountid;
+    }
+
+    public void setInvestmentaccountid(int investmentaccountid) {
+        this.investmentaccountid = investmentaccountid;
+    }
+
+    public double getFunds() {
+        return funds;
+    }
+
+    public void setFunds(double funds) {
+        this.funds = funds;
+    }
 
     public InvestmentAccount() {
 
     }
 
-
-    // get and set methods
-
-
-    public int getInvestmentAccountID() {
-        return InvestmentAccountID;
-    }
-
-    public double getFunds() {
-        return Funds;
-    }
-
-    public void setInvestmentAccountID(int investmentAccountID) {
-        InvestmentAccountID = investmentAccountID;
-    }
-
-    public void setFunds(float funds) {
-        Funds = funds;
-    }
-
-    // constructor
-    public InvestmentAccount(double funds){
-        this.Funds = funds;
-    }
+/*
 
     // add connection to stock
     @JoinColumn(name = "investment_account_id", referencedColumnName = "investment_account_id")
@@ -74,5 +72,5 @@ public class InvestmentAccount implements Serializable {
     public void setListOfTransaction(List<StockTransaction> listOfTransaction) {
         this.listOfTransaction = listOfTransaction;
     }
-
+*/
 }

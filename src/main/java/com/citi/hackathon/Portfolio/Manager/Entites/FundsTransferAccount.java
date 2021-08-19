@@ -3,47 +3,45 @@ package com.citi.hackathon.Portfolio.Manager.Entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "funds_transfer_account")
+@Table(name = "fundstransferaccount")
 public class FundsTransferAccount {
 
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "funds_transfer_account_id")
-    private Integer id;
+    @Column(name = "fundstransferaccountid")
+    private Integer fundstransferaccountid;
 
     @Column(name = "funds")
     private double funds;
 
-    @Column(name = "transfer_type")
-    private String transferType;
+    @Column(name = "transfertype")
+    private String transfertype;
 
-    @Column(name = "investment_account_id_ft")
-    private Integer investmentAccountId;
+    @Column(name = "investmentaccountidft")
+    private Integer investmentaccountidft;
 
-    @Column(name = "cash_account_id_ft")
-    private Integer cashAccountID;
+    @Column(name = "cashaccountidft")
+    private Integer cashaccountidft;
 
-
-
-    public FundsTransferAccount(Integer fundsTransferAccountID, double funds, String transferType, Integer cashAccountID, Integer investmentAccountId) {
-        this.id = fundsTransferAccountID;
+    public FundsTransferAccount(Integer fundstransferaccountid, double funds, String transfertype, Integer investmentaccountidft, Integer cashaccountidft) {
+        this.fundstransferaccountid = fundstransferaccountid;
         this.funds = funds;
-        this.transferType = transferType;
-        this.cashAccountID = cashAccountID;
-        this.investmentAccountId = investmentAccountId;
+        this.transfertype = transfertype;
+        this.investmentaccountidft = investmentaccountidft;
+        this.cashaccountidft = cashaccountidft;
     }
 
     public FundsTransferAccount() {
 
     }
 
-    public Integer getFundsTransferAccountID() {
-        return id;
+    public Integer getFundstransferaccountid() {
+        return fundstransferaccountid;
     }
 
-    public void setFundsTransferAccountID(Integer fundsTransferAccountID) {
-        this.id = fundsTransferAccountID;
+    public void setFundstransferaccountid(Integer fundstransferaccountid) {
+        this.fundstransferaccountid = fundstransferaccountid;
     }
 
     public double getFunds() {
@@ -54,30 +52,27 @@ public class FundsTransferAccount {
         this.funds = funds;
     }
 
-    public String getTransferType() {
-        return transferType;
+    public String getTransfertype() {
+        return transfertype;
     }
 
-    public void setTransferType(String transferType) {
-        this.transferType = transferType;
+    public void setTransfertype(String transfertype) {
+        this.transfertype = transfertype;
     }
 
-    public Integer getCashAccountID() {
-        return cashAccountID;
+    public Integer getInvestmentaccountidft() {
+        return investmentaccountidft;
     }
 
-    public void setCashAccountID(Integer cashAccount) {
-        this.cashAccountID = cashAccount;
+    public void setInvestmentaccountidft(Integer investmentaccountidft) {
+        this.investmentaccountidft = investmentaccountidft;
     }
 
-    public Integer getInvestmentAccountId() {
-        return investmentAccountId;
+    public Integer getCashaccountidft() {
+        return cashaccountidft;
     }
 
-    public void setInvestmentAccountId(Integer investmentAccount) {
-        this.investmentAccountId = investmentAccount;
+    public void setCashaccountidft(Integer cashaccountidft) {
+        this.cashaccountidft = cashaccountidft;
     }
-
-
-
 }

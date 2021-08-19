@@ -32,7 +32,7 @@ public class StockTransaction implements Serializable{
     private Integer stockid;
 
     @Column(name = "investmentaccountidtx")
-    private Integer investmentaccountid;
+    private Integer investmentaccountidtx;
 
 
     //Getter and Setter
@@ -85,25 +85,25 @@ public class StockTransaction implements Serializable{
         this.stockid = stockid;
     }
 
-    public Integer getInvestmentaccountid() {
-        return investmentaccountid;
+    public Integer getInvestmentaccountidtx() {
+        return investmentaccountidtx;
     }
 
-    public void setInvestmentaccountid(Integer investmentaccountid) {
-        this.investmentaccountid = investmentaccountid;
+    public void setInvestmentaccountidtx(Integer investmentaccountidtx) {
+        this.investmentaccountidtx = investmentaccountidtx;
     }
 
     //Constructor
 
 
-    public StockTransaction(Integer transactionid, Date transactiontime, Double amount, String transactiontype, String stockname, Integer stockid, Integer investmentaccountid) {
+    public StockTransaction(Integer transactionid, Date transactiontime, Double amount, String transactiontype, String stockname, Integer stockid, Integer investmentaccountidtx) {
         this.transactionid = transactionid;
         this.transactiontime = transactiontime;
         this.amount = amount;
         this.transactiontype = transactiontype;
         this.stockname = stockname;
         this.stockid = stockid;
-        this.investmentaccountid = investmentaccountid;
+        this.investmentaccountidtx = investmentaccountidtx;
     }
 
     public StockTransaction() {

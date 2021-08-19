@@ -11,95 +11,91 @@ public class Futures implements Serializable {
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "futures_id")
-    private Integer id;
+    @Column(name = "futuresid")
+    private Integer futuresid;
 
-    @Column(name = "expiry_date")
-    private Date expiryDate;
+    @Column(name = "expirydate")
+    private Date expirydate;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "futuresname")
+    private String futuresname;
 
-    @Column(name = "time_bought")
-    private Date timeBought;
+    @Column(name = "timebought")
+    private Date timebought;
 
-    @Column(name = "purchase_price")
-    private Double purchasePrice;
+    @Column(name = "purchaseprice")
+    private Double purchaseprice;
 
-    @Column(name = "number_of_futures")
-    private Integer numberOfFutures;
+    @Column(name = "numberoffutures")
+    private Integer numberoffutures;
 
-    @Column(name = "investment_account_id_f")
-    private Integer investmentAccountId;
+    @Column(name = "investmentaccountidf")
+    private Integer investmentaccountidf;
 
-
-    //Getter and Setter
-    public Integer getFuturesID() {
-        return id;
+    public Futures(Integer futuresid, Date expirydate, String futuresname, Date timebought, Double purchaseprice, Integer numberoffutures, Integer investmentaccountidf) {
+        this.futuresid = futuresid;
+        this.expirydate = expirydate;
+        this.futuresname = futuresname;
+        this.timebought = timebought;
+        this.purchaseprice = purchaseprice;
+        this.numberoffutures = numberoffutures;
+        this.investmentaccountidf = investmentaccountidf;
     }
 
-    public void setFuturesID(Integer futuresID) {
-        this.id = futuresID;
+    public Integer getFuturesid() {
+        return futuresid;
     }
 
-    public Date getExpiryDate() {
-        return expiryDate;
+    public void setFuturesid(Integer futuresid) {
+        this.futuresid = futuresid;
     }
 
-    public void setExpiryDate(Date expiryDate) {
-        this.expiryDate = expiryDate;
+    public Date getExpirydate() {
+        return expirydate;
     }
 
-    public Date getTimeBought() {
-        return timeBought;
+    public void setExpirydate(Date expirydate) {
+        this.expirydate = expirydate;
     }
 
-    public void setTimeBought(Date timeBought) {
-        this.timeBought = timeBought;
+    public String getFuturesname() {
+        return futuresname;
     }
 
-    public String getName() {
-        return name;
+    public void setFuturesname(String futuresname) {
+        this.futuresname = futuresname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Date getTimebought() {
+        return timebought;
     }
 
-    public Double getPurchasePrice() {
-        return purchasePrice;
+    public void setTimebought(Date timebought) {
+        this.timebought = timebought;
     }
 
-    public void setPurchasePrice(Double purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public Double getPurchaseprice() {
+        return purchaseprice;
     }
 
-    public Integer getNumberOfFutures() {
-        return numberOfFutures;
+    public void setPurchaseprice(Double purchaseprice) {
+        this.purchaseprice = purchaseprice;
     }
 
-    public void setNumberOfFutures(Integer numberOfFutures) {
-        this.numberOfFutures = numberOfFutures;
+    public Integer getNumberoffutures() {
+        return numberoffutures;
     }
 
-    public Integer getInvestmentAccountId() {
-        return investmentAccountId;
+    public void setNumberoffutures(Integer numberoffutures) {
+        this.numberoffutures = numberoffutures;
     }
 
-    public void setInvestmentAccountId(Integer investmentAccountId) {
-        this.investmentAccountId = investmentAccountId;
+    public Integer getInvestmentaccountidf() {
+        return investmentaccountidf;
     }
 
-
-    //Constructors
-    public Futures(Integer futuresID, Date timeBought, Date expireD, String name, Double purchasePrice, Integer numberOfFutures, Integer investmentAccountId) {
-        this.id = futuresID;
-        this.expiryDate = expireD;
-        this.timeBought = timeBought;
-        this.name = name;
-        this.purchasePrice = purchasePrice;
-        this.numberOfFutures = numberOfFutures;
-        this.investmentAccountId = investmentAccountId;
+    public void setInvestmentaccountidf(Integer investmentaccountidf) {
+        this.investmentaccountidf = investmentaccountidf;
     }
 
     public Futures() {
