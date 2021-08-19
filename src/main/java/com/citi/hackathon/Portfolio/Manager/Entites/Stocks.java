@@ -13,91 +13,95 @@ public class Stocks implements Serializable {
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "stock_id")
-    private Integer stockID;
+    @Column(name = "stockid")
+    private Integer stockid;
 
-    @Column(name = "time_bought")
-    private Date timeBought;
+    @Column(name = "timebought")
+    private Date timebought;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "stockname")
+    private String stockname;
 
-    @Column(name = "purchase_price")
-    private Double purchasePrice;
+    @Column(name = "purchaseprice")
+    private Double purchaseprice;
 
-    @Column(name = "number_of_stocks")
-    private Integer numberOfStocks;
+    @Column(name = "numberofstocks")
+    private Integer numberofstocks;
 
-    @Column(name = "investment_account_id_s")
-    private Integer investmentAccountId;
+    @Column(name = "investmentaccountids")
+    private Integer investmentaccountids;
 
 
-    //Getter and Setter
-    public Integer getStockID() {
-        return stockID;
+   // Getter setter
+
+
+    public Integer getStockid() {
+        return stockid;
     }
 
-    public void setStockID(Integer stockID) {
-        this.stockID = stockID;
+    public void setStockid(Integer stockid) {
+        this.stockid = stockid;
     }
 
-    public Date getTimeBought() {
-        return timeBought;
+    public Date getTimebought() {
+        return timebought;
     }
 
-    public void setTimeBought(Date timeBought) {
-        this.timeBought = timeBought;
+    public void setTimebought(Date timebought) {
+        this.timebought = timebought;
     }
 
-    public String getName() {
-        return name;
+    public String getStockname() {
+        return stockname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStockname(String stockname) {
+        this.stockname = stockname;
     }
 
-    public Double getPurchasePrice() {
-        return purchasePrice;
+    public Double getPurchaseprice() {
+        return purchaseprice;
     }
 
-    public void setPurchasePrice(Double purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public void setPurchaseprice(Double purchaseprice) {
+        this.purchaseprice = purchaseprice;
     }
 
-    public Integer getNumberOfStocks() {
-        return numberOfStocks;
+    public Integer getNumberofstocks() {
+        return numberofstocks;
     }
 
-    public void setNumberOfStocks(Integer numberOfStocks) {
-        this.numberOfStocks = numberOfStocks;
+    public void setNumberofstocks(Integer numberofstocks) {
+        this.numberofstocks = numberofstocks;
     }
 
-    public Integer getInvestmentAccountId() {
-        return investmentAccountId;
+    public Integer getInvestmentaccountids() {
+        return investmentaccountids;
     }
 
-    public void setInvestmentAccountId(Integer investmentAccountId) {
-        this.investmentAccountId = investmentAccountId;
+    public void setInvestmentaccountids(Integer investmentaccountids) {
+        this.investmentaccountids = investmentaccountids;
     }
-
 
     //Constructors
-    public Stocks(Integer stockID, Date timeBought, String name, Double purchasePrice, Integer numberOfStocks, Integer investmentAccountId) {
-        this.stockID = stockID;
-        this.timeBought = timeBought;
-        this.name = name;
-        this.purchasePrice = purchasePrice;
-        this.numberOfStocks = numberOfStocks;
-        this.investmentAccountId = investmentAccountId;
+
+    public Stocks(Integer stockid, Date timebought, String stockname, Double purchaseprice, Integer numberofstocks, Integer investmentaccountids) {
+        this.stockid = stockid;
+        this.timebought = timebought;
+        this.stockname = stockname;
+        this.purchaseprice = purchaseprice;
+        this.numberofstocks = numberofstocks;
+        this.investmentaccountids = investmentaccountids;
+        //this.listOfTransaction = listOfTransaction;
     }
 
     public Stocks() {
     }
 
-    //Adding Relationship
 
-    @JoinColumn(name = "stock_id", referencedColumnName = "stock_id")
+    //Adding Relationship
+/*
+    @JoinColumn(name = "stockid", referencedColumnName = "stockid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 
@@ -108,4 +112,6 @@ public class Stocks implements Serializable {
     public void setListOfTransaction(List<StockTransaction> listOfTransaction) {
         this.listOfTransaction = listOfTransaction;
     }
+
+ */
 }

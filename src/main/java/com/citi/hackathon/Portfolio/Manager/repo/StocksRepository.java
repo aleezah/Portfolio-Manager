@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface StocksRepository extends JpaRepository<Stocks, Integer> {
 
-    public List<Stocks> findByName(String name);
+    public List<Stocks> findByStockname (String name);
 
 }

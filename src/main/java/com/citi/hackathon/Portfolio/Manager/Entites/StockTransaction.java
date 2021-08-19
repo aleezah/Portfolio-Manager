@@ -7,49 +7,50 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "stock transaction")
+@Table(name = "stocktransaction")
 public class StockTransaction implements Serializable{
 
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id")
-    private Integer transactionID;
+    @Column(name = "transactionid")
+    private Integer transactionid;
 
-    @Column(name = "transaction_time")
-    private Date transactionTime;
+    @Column(name = "transactiontime")
+    private Date transactiontime;
 
     @Column(name = "amount")
     private Double amount;
 
-    @Column(name = "transaction_type")
-    private String transactionType;
+    @Column(name = "transactiontype")
+    private String transactiontype;
 
-    @Column(name = "stock_name")
-    private String stockName;
+    @Column(name = "stockname")
+    private String stockname;
 
-    @Column(name = "stock_id")
-    private Integer stockID;
+    @Column(name = "stockid")
+    private Integer stockid;
 
-    @Column(name = "investment_account_id_tx")
-    private Integer investmentAccountID;
+    @Column(name = "investmentaccountidtx")
+    private Integer investmentaccountid;
 
 
     //Getter and Setter
-    public Integer getTransactionID() {
-        return transactionID;
+
+    public Integer getTransactionid() {
+        return transactionid;
     }
 
-    public void setTransactionID(Integer transactionID) {
-        this.transactionID = transactionID;
+    public void setTransactionid(Integer transactionid) {
+        this.transactionid = transactionid;
     }
 
-    public Date getTransactionTime() {
-        return transactionTime;
+    public Date getTransactiontime() {
+        return transactiontime;
     }
 
-    public void setTransactionTime(Date transactionTime) {
-        this.transactionTime = transactionTime;
+    public void setTransactiontime(Date transactiontime) {
+        this.transactiontime = transactiontime;
     }
 
     public Double getAmount() {
@@ -60,48 +61,49 @@ public class StockTransaction implements Serializable{
         this.amount = amount;
     }
 
-    public String getTransactionType() {
-        return transactionType;
+    public String getTransactiontype() {
+        return transactiontype;
     }
 
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
+    public void setTransactiontype(String transactiontype) {
+        this.transactiontype = transactiontype;
     }
 
-    public String getStockName() {
-        return stockName;
+    public String getStockname() {
+        return stockname;
     }
 
-    public void setStockName(String stockName) {
-        this.stockName = stockName;
+    public void setStockname(String stockname) {
+        this.stockname = stockname;
     }
 
-    public Integer getStockID() {
-        return stockID;
+    public Integer getStockid() {
+        return stockid;
     }
 
-    public void setStockID(Integer stockID) {
-        stockID = stockID;
+    public void setStockid(Integer stockid) {
+        this.stockid = stockid;
     }
 
-    public Integer getInvestmentAccountID() {
-        return investmentAccountID;
+    public Integer getInvestmentaccountid() {
+        return investmentaccountid;
     }
 
-    public void setInvestmentAccountID(Integer investmentAccountID) {
-        this.investmentAccountID = investmentAccountID;
+    public void setInvestmentaccountid(Integer investmentaccountid) {
+        this.investmentaccountid = investmentaccountid;
     }
 
     //Constructor
 
-    public StockTransaction(Integer transactionID, Date transactionTime, Double amount, String transactionType, String stockName, Integer stockID, Integer investmentAccountID) {
-        this.transactionID = transactionID;
-        this.transactionTime = transactionTime;
+
+    public StockTransaction(Integer transactionid, Date transactiontime, Double amount, String transactiontype, String stockname, Integer stockid, Integer investmentaccountid) {
+        this.transactionid = transactionid;
+        this.transactiontime = transactiontime;
         this.amount = amount;
-        this.transactionType = transactionType;
-        this.stockName = stockName;
-        this.stockID = stockID;
-        this.investmentAccountID = investmentAccountID;
+        this.transactiontype = transactiontype;
+        this.stockname = stockname;
+        this.stockid = stockid;
+        this.investmentaccountid = investmentaccountid;
     }
 
     public StockTransaction() {

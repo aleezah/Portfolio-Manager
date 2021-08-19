@@ -28,7 +28,7 @@ public class StockServiceImpl implements StockService {
     @Override
     public List<Stocks> getByName(String stock_Name){
 
-        return stockDAO.findByName(stock_Name);
+        return stockDAO.findByStockname(stock_Name);
 
     }
 
