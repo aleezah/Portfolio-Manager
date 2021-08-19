@@ -7,30 +7,34 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="ETF")
+@Table(name="etf")
 public class ETF {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "etfID")
+    @Column(name = "etf_id")
     private Integer etfID;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "PurchasePrice")
+    @Column(name = "purchase_price")
     private Double purchasePrice;
 
     //there is a typo in the name of this one?
-    @Column(name = "InvestmentAccountIETF")
+    @Column(name = "investment_account_id_etf")
     private  Integer investmentAccountIDETF;
 
-    @Column(name = "TimeBought")
+    @Column(name = "time_bought")
     private Date timeBought;
 
     //sql has a typo
-    @Column(name = "NumeberOfETF")
+    @Column(name = "numeber_of_etf")
     private int numberOfETF;
+
+    public ETF() {
+
+    }
 
     //get and set methods
 

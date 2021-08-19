@@ -13,25 +13,25 @@ public class StockTransaction implements Serializable{
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transactionID")
+    @Column(name = "transaction_id")
     private Integer transactionID;
 
-    @Column(name = "TransactionTime")
+    @Column(name = "transaction_time")
     private Date transactionTime;
 
-    @Column(name = "Amount")
+    @Column(name = "amount")
     private Double amount;
 
-    @Column(name = "transactionType")
+    @Column(name = "transaction_type")
     private String transactionType;
 
-    @Column(name = "StockName")
+    @Column(name = "stock_name")
     private String stockName;
 
-    @Column(name = "stockID")
+    @Column(name = "stock_id")
     private Integer stockID;
 
-    @Column(name = "investmentAccountID")
+    @Column(name = "investment_account_id_tx")
     private Integer investmentAccountID;
 
 
@@ -100,7 +100,7 @@ public class StockTransaction implements Serializable{
         this.amount = amount;
         this.transactionType = transactionType;
         this.stockName = stockName;
-        stockID = stockID;
+        this.stockID = stockID;
         this.investmentAccountID = investmentAccountID;
     }
 

@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="CashAccount")
+@Table(name="cash_account")
 
 public class CashAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CashAccountID")
+    @Column(name = "cash_account_id")
     private Integer id;
-    @Column(name = "Funds")
+    @Column(name = "funds")
     private Double Funds;
 
-    @Column(name = "AccountType")
+    @Column(name = "account_type")
     private String accountType;
 
     public CashAccount(int i, double f,String t){
@@ -56,7 +56,7 @@ public class CashAccount {
     //Adding Relationship
 //FINISH WHEN DONE
 
-    @JoinColumn(name = "cashAccountID", referencedColumnName = "CashAccountID")
+    @JoinColumn(name = "cash_account_id", referencedColumnName = "cash_account_id")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<FundsTransferAccount> fundsTransfer= new ArrayList<FundsTransferAccount>();
 

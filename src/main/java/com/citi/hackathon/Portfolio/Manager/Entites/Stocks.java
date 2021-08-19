@@ -13,22 +13,22 @@ public class Stocks implements Serializable {
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "StockID")
+    @Column(name = "stock_id")
     private Integer stockID;
 
-    @Column(name = "TimeBought")
+    @Column(name = "time_bought")
     private Date timeBought;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "PurchasePrice")
+    @Column(name = "purchase_price")
     private Double purchasePrice;
 
-    @Column(name = "NumberOfStocks")
+    @Column(name = "number_of_stocks")
     private Integer numberOfStocks;
 
-    @Column(name = "investmentaccountID")
+    @Column(name = "investment_account_id_s")
     private Integer investmentAccountId;
 
 
@@ -97,7 +97,7 @@ public class Stocks implements Serializable {
 
     //Adding Relationship
 
-    @JoinColumn(name = "StockID", referencedColumnName = "StockID")
+    @JoinColumn(name = "stock_id", referencedColumnName = "stock_id")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 

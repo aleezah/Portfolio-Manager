@@ -5,28 +5,31 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "Futures")
+@Table(name = "futures")
 public class Futures implements Serializable {
 
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "FuturesID")
+    @Column(name = "futures_id")
     private Integer id;
 
-    @Column(name = "TimeBought")
-    private Date timeBought;
+    @Column(name = "expiry_date")
+    private Date expiryDate;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "PurchasePrice")
+    @Column(name = "time_bought")
+    private Date timeBought;
+
+    @Column(name = "purchase_price")
     private Double purchasePrice;
 
-    @Column(name = "NumberOfFutures")
+    @Column(name = "number_of_futures")
     private Integer numberOfFutures;
 
-    @Column(name = "InvestmentAccountID")
+    @Column(name = "investment_account_id_f")
     private Integer investmentAccountId;
 
 
@@ -37,6 +40,14 @@ public class Futures implements Serializable {
 
     public void setFuturesID(Integer futuresID) {
         this.id = futuresID;
+    }
+
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(Date expiryDate) {
+        this.expiryDate = expiryDate;
     }
 
     public Date getTimeBought() {
@@ -81,8 +92,9 @@ public class Futures implements Serializable {
 
 
     //Constructors
-    public Futures(Integer futuresID, Date timeBought, String name, Double purchasePrice, Integer numberOfFutures, Integer investmentAccountId) {
+    public Futures(Integer futuresID, Date timeBought, Date expireD, String name, Double purchasePrice, Integer numberOfFutures, Integer investmentAccountId) {
         this.id = futuresID;
+        this.expiryDate = expireD;
         this.timeBought = timeBought;
         this.name = name;
         this.purchasePrice = purchasePrice;

@@ -8,16 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Investment Account")
+@Table(name="investment account")
 public class InvestmentAccount implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "InvestmentAccountID")
+    @Column(name = "investment_account_id")
     private int InvestmentAccountID;
 
-    @Column(name = "Funds")
+    @Column(name = "funds")
     private double Funds;
+
+    public InvestmentAccount() {
+
+    }
 
 
     // get and set methods
@@ -45,7 +49,7 @@ public class InvestmentAccount implements Serializable {
     }
 
     // add connection to stock
-    @JoinColumn(name = "investmentaccountID", referencedColumnName = "InvestmentAccountID")
+    @JoinColumn(name = "investment_account_id", referencedColumnName = "investment_account_id")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Stocks> listOfStocks= new ArrayList<Stocks>();
 
@@ -59,7 +63,7 @@ public class InvestmentAccount implements Serializable {
 
 
     // add connection to stock transaction
-    @JoinColumn(name = "investmentAccountID", referencedColumnName = "InvestmentAccountID")
+    @JoinColumn(name = "investment_account_id", referencedColumnName = "investment_account_id")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 

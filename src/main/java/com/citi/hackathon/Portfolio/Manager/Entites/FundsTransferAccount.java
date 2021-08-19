@@ -3,27 +3,28 @@ package com.citi.hackathon.Portfolio.Manager.Entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "fundstransferaccount")
+@Table(name = "funds_transfer_account")
 public class FundsTransferAccount {
 
     //Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "FundsTransferAccountID")
+    @Column(name = "funds_transfer_account_id")
     private Integer id;
 
-    @Column(name = "Funds")
+    @Column(name = "funds")
     private double funds;
 
-    @Column(name = "transferType")
+    @Column(name = "transfer_type")
     private String transferType;
 
+    @Column(name = "investment_account_id_ft")
+    private Integer investmentAccountId;
 
-    @Column(name = "cashAccountID")
+    @Column(name = "cash_account_id_ft")
     private Integer cashAccountID;
 
-    @Column(name = "investmentAccountID")
-    private Integer investmentAccountId;
+
 
     public FundsTransferAccount(Integer fundsTransferAccountID, double funds, String transferType, Integer cashAccountID, Integer investmentAccountId) {
         this.id = fundsTransferAccountID;
