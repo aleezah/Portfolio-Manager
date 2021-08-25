@@ -53,7 +53,7 @@ public class TestStockController {
     public void testCanRetrieveAllStocks() throws Exception {
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh.mm.ss");
 
-        Stocks stock = new Stocks(1, ft.parse("2020-05-06 10:45:06"), "TSLA", 300.00, 6, 7);
+        Stocks stock = new Stocks(ft.parse("2020-05-06 10:45:06"), "TSLA", 300.00, 6, 7);
         List<Stocks> allStocks = Arrays.asList(stock);
 
         given(service.getAllStocks()).willReturn(allStocks);

@@ -85,8 +85,8 @@ public class Stocks implements Serializable {
 
     //Constructors
 
-    public Stocks(Integer stockid, Date timebought, String stockname, Double purchaseprice, Integer numberofstocks, Integer investmentaccountids) {
-        this.stockid = stockid;
+    public Stocks(Date timebought, String stockname, Double purchaseprice, Integer numberofstocks, Integer investmentaccountids) {
+        //this.stockid = stockid;
         this.timebought = timebought;
         this.stockname = stockname;
         this.purchaseprice = purchaseprice;
@@ -100,8 +100,8 @@ public class Stocks implements Serializable {
 
 
     //Adding Relationship
-/*
-    @JoinColumn(name = "stockid", referencedColumnName = "stockid")
+
+    @JoinColumn(name = "stockidtx", referencedColumnName = "stockid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 
@@ -113,5 +113,5 @@ public class Stocks implements Serializable {
         this.listOfTransaction = listOfTransaction;
     }
 
- */
+
 }

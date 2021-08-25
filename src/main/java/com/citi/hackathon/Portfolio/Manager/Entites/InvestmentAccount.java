@@ -19,14 +19,15 @@ public class InvestmentAccount implements Serializable {
     @Column(name = "funds")
     private double funds;
 
-    public InvestmentAccount(int investmentaccountid, double funds) {
-        this.investmentaccountid = investmentaccountid;
+    @Column(name = "investmentaccname")
+    private String investmentaccname;
+
+    public InvestmentAccount(double funds, String investmentaccname ) {
+        this.investmentaccname = investmentaccname;
         this.funds = funds;
     }
 
-    public InvestmentAccount(double funds) {
-        this.funds = funds;
-    }
+
 
     public int getInvestmentaccountid() {
         return investmentaccountid;
@@ -48,10 +49,10 @@ public class InvestmentAccount implements Serializable {
 
     }
 
-/*
+
 
     // add connection to stock
-    @JoinColumn(name = "investment_account_id", referencedColumnName = "investment_account_id")
+    @JoinColumn(name = "investmentaccountids", referencedColumnName = "investmentaccountid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Stocks> listOfStocks= new ArrayList<Stocks>();
 
@@ -65,7 +66,7 @@ public class InvestmentAccount implements Serializable {
 
 
     // add connection to stock transaction
-    @JoinColumn(name = "investment_account_id", referencedColumnName = "investment_account_id")
+    @JoinColumn(name = "investmentaccountidtx", referencedColumnName = "investmentaccountid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
 
@@ -76,5 +77,5 @@ public class InvestmentAccount implements Serializable {
     public void setListOfTransaction(List<StockTransaction> listOfTransaction) {
         this.listOfTransaction = listOfTransaction;
     }
-*/
+
 }

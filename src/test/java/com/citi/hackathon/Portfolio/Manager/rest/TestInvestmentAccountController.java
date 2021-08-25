@@ -50,7 +50,7 @@ public class TestInvestmentAccountController {
     @Test
     public void testCanRetrieveAllInvestmentAccounts() throws Exception {
 
-        InvestmentAccount InvestmentAccount = new InvestmentAccount(3333.33);
+        InvestmentAccount InvestmentAccount = new InvestmentAccount(3333.33, "Citi Velocity");
         List<InvestmentAccount> allInvestmentAccounts = Arrays.asList(InvestmentAccount);
 
         given(service.getAllInvestmentAccounts()).willReturn(allInvestmentAccounts);
