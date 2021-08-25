@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "efttransaction")
+@Table(name = "etftransaction")
 public class EtfTransaction implements Serializable {
 
     @Id

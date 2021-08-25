@@ -16,15 +16,18 @@ public class CashAccount {
     private Double funds;
     @Column(name = "accounttype")
     private String accounttype;
+    @Column(name = "cashaccname")
+    private String cashaccname;
 
-    public CashAccount() {
 
-    }
+    public CashAccount( Double funds, String accounttype, String cashaccname) {
 
-    public CashAccount(Integer cashaccountid, Double funds, String accounttype) {
-        this.cashaccountid = cashaccountid;
         this.funds = funds;
         this.accounttype = accounttype;
+        this.cashaccname = cashaccname;
+    }
+    public CashAccount() {
+
     }
 
     public Integer getCashaccountid() {
@@ -51,8 +54,13 @@ public class CashAccount {
         this.accounttype = accountype;
     }
 
+    public String getCashaccname() {
+        return cashaccname;
+    }
 
-
+    public void setCashaccname(String cashaccname) {
+        this.cashaccname = cashaccname;
+    }
 
 //Adding Relationship
 //FINISH WHEN DONE

@@ -22,6 +22,14 @@ public class InvestmentAccount implements Serializable {
     @Column(name = "investmentaccname")
     private String investmentaccname;
 
+    public String getInvestmentaccname() {
+        return investmentaccname;
+    }
+
+    public void setInvestmentaccname(String investmentaccname) {
+        this.investmentaccname = investmentaccname;
+    }
+
     public InvestmentAccount(double funds, String investmentaccname ) {
         this.investmentaccname = investmentaccname;
         this.funds = funds;
@@ -110,7 +118,7 @@ public class InvestmentAccount implements Serializable {
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<Futures> listOfFutures = new ArrayList<Futures>();
 
-    public List<Futures> getListOfEftFutures() {
+    public List<Futures> getListOfFutures() {
         return listOfFutures;
     }
 
@@ -123,7 +131,7 @@ public class InvestmentAccount implements Serializable {
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private List<FuturesTransaction> listOfFuturesTransaction = new ArrayList<FuturesTransaction>();
 
-    public List<FuturesTransaction> getListOfEftFuturesTransaction() {
+    public List<FuturesTransaction> getListOfFuturesTransaction() {
         return listOfFuturesTransaction;
     }
 

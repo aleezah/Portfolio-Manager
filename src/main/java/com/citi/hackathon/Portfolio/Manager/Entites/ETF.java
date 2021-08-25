@@ -25,7 +25,7 @@ public class ETF {
     private Date timebought;
 
     //sql has a typo
-    @Column(name = "numeberofetf")
+    @Column(name = "numberofetf")
     private int numberofetf;
 
     //there is a typo in the name of this one?

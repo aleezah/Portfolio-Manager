@@ -50,7 +50,7 @@ public class TestCashAccountController {
     @Test
     public void testCanRetrieveAllCashAccounts() throws Exception {
 
-        CashAccount cashAccount = new CashAccount(1, 4000.20, "Savings account");
+        CashAccount cashAccount = new CashAccount( 4000.20, "Savings account","TD Savings");
         List<CashAccount> allCashAccounts = Arrays.asList(cashAccount);
 
         given(service.getAllCashAccount()).willReturn(allCashAccounts);
