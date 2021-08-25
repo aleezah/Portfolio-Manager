@@ -68,14 +68,67 @@ public class InvestmentAccount implements Serializable {
     // add connection to stock transaction
     @JoinColumn(name = "investmentaccountidtx", referencedColumnName = "investmentaccountid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
-    private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
+    private List<StockTransaction> listOfStockTransaction = new ArrayList<StockTransaction>();
 
-    public List<StockTransaction> getListOfTransaction() {
-        return listOfTransaction;
+    public List<StockTransaction> getListOfStockTransaction() {
+        return listOfStockTransaction;
     }
 
-    public void setListOfTransaction(List<StockTransaction> listOfTransaction) {
-        this.listOfTransaction = listOfTransaction;
+    public void setListOfStockTransaction(List<StockTransaction> listOfStockTransaction) {
+        this.listOfStockTransaction = listOfStockTransaction;
+    }
+
+    // Relation between Investment Account and ETF
+    @JoinColumn(name = "investmentaccountidetf", referencedColumnName = "investmentaccountid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<ETF> listOfETF = new ArrayList<ETF>();
+
+    public List<ETF> getListOfETF() {
+        return listOfETF;
+    }
+
+    public void setListOfETF(List<ETF> listOfETF) {
+        this.listOfETF = listOfETF;
+    }
+
+    // Relation between Investment Account and ETF transactions
+    @JoinColumn(name = "etfinvestmentacc", referencedColumnName = "investmentaccountid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<EtfTransaction> listOfEtfTransaction = new ArrayList<EtfTransaction>();
+
+    public List<EtfTransaction> getListOfEtfTransaction() {
+        return listOfEtfTransaction;
+    }
+
+    public void setListOfEtfTransaction(List<EtfTransaction> listOfEtfTransaction) {
+        this.listOfEtfTransaction = listOfEtfTransaction;
+    }
+
+
+    // Relation between Investment Account and Futures
+    @JoinColumn(name = "investmentaccountidf", referencedColumnName = "investmentaccountid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<Futures> listOfFutures = new ArrayList<Futures>();
+
+    public List<Futures> getListOfEftFutures() {
+        return listOfFutures;
+    }
+
+    public void setListOfFutures(List<Futures> listOfFutures) {
+        this.listOfFutures = listOfFutures;
+    }
+
+    // Relation between Investment Account and Futures transactions
+    @JoinColumn(name = "futuresinvestmentaccid", referencedColumnName = "investmentaccountid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<FuturesTransaction> listOfFuturesTransaction = new ArrayList<FuturesTransaction>();
+
+    public List<FuturesTransaction> getListOfEftFuturesTransaction() {
+        return listOfFuturesTransaction;
+    }
+
+    public void setListOfFuturesTransaction(List<FuturesTransaction> listOfFuturesTransaction) {
+        this.listOfFuturesTransaction = listOfFuturesTransaction;
     }
 
 }

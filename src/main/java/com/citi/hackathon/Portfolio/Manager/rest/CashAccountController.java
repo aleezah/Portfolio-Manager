@@ -9,6 +9,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/Cash Account")
+@CrossOrigin
 public class CashAccountController {
 
     @Autowired

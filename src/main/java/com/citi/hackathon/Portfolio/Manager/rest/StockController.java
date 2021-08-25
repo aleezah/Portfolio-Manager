@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/stocks")
 @CrossOrigin
+@RequestMapping("/stocks")
 public class StockController {
 
     @Autowired
