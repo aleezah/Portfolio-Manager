@@ -2,7 +2,9 @@ package com.citi.hackathon.Portfolio.Manager.Entites;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "futures")
@@ -102,6 +104,19 @@ public class Futures implements Serializable {
     }
 
     //Adding Relationship
+
+
+    @JoinColumn(name = "futuresid", referencedColumnName = "futuresid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<FuturesTransaction> listOfFuturesTransaction = new ArrayList<FuturesTransaction>();
+
+    public List<FuturesTransaction> getListOfFuturesTransaction() {
+        return listOfFuturesTransaction;
+    }
+
+    public void setListOfFuturesTransaction(List<FuturesTransaction> listOfFuturesTransaction) {
+        this.listOfFuturesTransaction = listOfFuturesTransaction;
+    }
 
 
 }

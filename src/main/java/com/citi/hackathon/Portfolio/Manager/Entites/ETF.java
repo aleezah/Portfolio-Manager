@@ -32,6 +32,8 @@ public class ETF {
     @Column(name = "investmentaccountidetf")
     private  Integer investmentaccountidetf;
 
+    //get and set methods
+
     public Integer getEtfid() {
         return etfid;
     }
@@ -82,14 +84,7 @@ public class ETF {
 
 
 
-    public ETF(Integer etfid, String etfname, Double purchaseprice, Integer investmentaccountidetf, Date timebought, int numberofetf) {
-        this.etfid = etfid;
-        this.etfname = etfname;
-        this.purchaseprice = purchaseprice;
-        this.investmentaccountidetf = investmentaccountidetf;
-        this.timebought = timebought;
-        this.numberofetf = numberofetf;
-    }
+    //Constructors
 
 
     public ETF(String etfname, Double purchaseprice, Date timebought, int numberofetf, Integer investmentaccountidetf) {
@@ -104,22 +99,17 @@ public class ETF {
 
     }
 
-    //get and set methods
-
-
 
     //    //Adding Relationship
-//
-//    @JoinColumn(name = "InvestmentAccountIETF", referencedColumnName = "InvestmentAccountID")
-//    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
-//    private List<StockTransaction> listOfTransaction = new ArrayList<StockTransaction>();
-//
-//    public List<StockTransaction> getListOfTransaction() {
-//        return listOfTransaction;
-//    }
-//
-//    public void setListOfTransaction(List<StockTransaction> listOfTransaction) {
-//        this.listOfTransaction = listOfTransaction;
-//    }
+    @JoinColumn(name = "etfid", referencedColumnName = "etfid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<EtfTransaction> listOfEtfTransaction = new ArrayList<EtfTransaction>();
 
+    public List<EtfTransaction> getListOfEtfTransaction() {
+        return listOfEtfTransaction;
+    }
+
+    public void setListOfEtfTransaction(List<EtfTransaction> listOfEtfTransaction) {
+        this.listOfEtfTransaction = listOfEtfTransaction;
+    }
 }

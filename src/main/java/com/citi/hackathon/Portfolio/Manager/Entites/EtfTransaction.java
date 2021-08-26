@@ -105,8 +105,8 @@ public class EtfTransaction implements Serializable {
     //constructors
 
 
-    public EtfTransaction(Integer etftransactionid, Integer numberofetf, Integer etfid, Integer etfinvestmentacc, Double etftransactionamount, String eftname, String etftransactiontype, Date etftransactiontime) {
-        this.etftransactionid = etftransactionid;
+    public EtfTransaction( Integer numberofetf, Integer etfid, Integer etfinvestmentacc, Double etftransactionamount, String eftname, String etftransactiontype, Date etftransactiontime) {
+
         this.numberofetf = numberofetf;
         this.etfid = etfid;
         this.etfinvestmentacc = etfinvestmentacc;

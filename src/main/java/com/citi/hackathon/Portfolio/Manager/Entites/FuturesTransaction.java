@@ -102,8 +102,8 @@ public class FuturesTransaction implements Serializable {
         this.futurestransactiontime = futurestransactiontime;
     }
 
-    public FuturesTransaction(Integer futurestransactionid, Integer futuresid, Integer futuresinvestmentaccid, Integer numberoffutures, Double futurestransactionamount, String futurestransactiontype, String futuresname, Date futurestransactiontime) {
-        this.futurestransactionid = futurestransactionid;
+    public FuturesTransaction( Integer futuresid, Integer futuresinvestmentaccid, Integer numberoffutures, Double futurestransactionamount, String futurestransactiontype, String futuresname, Date futurestransactiontime) {
+
         this.futuresid = futuresid;
         this.futuresinvestmentaccid = futuresinvestmentaccid;
         this.numberoffutures = numberoffutures;
