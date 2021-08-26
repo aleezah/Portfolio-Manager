@@ -8,7 +8,10 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +30,19 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public List<Stocks> getByName(String stock_Name){
+
+//        try {
+//            Stock stock = YahooFinance.get("INTC");
+//
+//            BigDecimal price = stock.getQuote().getPrice();
+//            BigDecimal change = stock.getQuote().getChangeInPercent();
+//            BigDecimal peg = stock.getStats().getPeg();
+//            BigDecimal dividend = stock.getDividend().getAnnualYieldPercent();
+//
+//            stock.print();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         return stockDAO.findByStockname(stock_Name);
 

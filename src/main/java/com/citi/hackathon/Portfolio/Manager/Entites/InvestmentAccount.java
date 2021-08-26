@@ -139,4 +139,21 @@ public class InvestmentAccount implements Serializable {
         this.listOfFuturesTransaction = listOfFuturesTransaction;
     }
 
+    // Relation Between Investment account and history
+
+
+
+    @JoinColumn(name = "investmentaccountid", referencedColumnName = "investmentaccountid")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private List<InvestmentAccountHistory> investmentAccountHistories= new ArrayList<InvestmentAccountHistory>();
+
+    public List<InvestmentAccountHistory> getInvestmentAccountHistories() {
+        return investmentAccountHistories;
+    }
+
+    public void setInvestmentAccountHistories(List<InvestmentAccountHistory> histories) {
+        this.investmentAccountHistories = histories;
+    }
+
+
 }

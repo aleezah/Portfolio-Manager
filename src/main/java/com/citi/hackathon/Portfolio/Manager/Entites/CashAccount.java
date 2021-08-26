@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 @Table(name="cashaccount")
-
 public class CashAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,18 +63,18 @@ public class CashAccount {
 
 //Adding Relationship
 //FINISH WHEN DONE
-/*
+
     @JoinColumn(name = "cashaccountid", referencedColumnName = "cashaccountid")
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
-    private List<FundsTransferAccount> fundsTransfer= new ArrayList<FundsTransferAccount>();
+    private List<CashAccountHistory> cashAccountHistories= new ArrayList<CashAccountHistory>();
 
-    public List<FundsTransferAccount> getFundsTransfer() {
-        return fundsTransfer;
+    public List<CashAccountHistory> getCashAccountHistories() {
+        return cashAccountHistories;
     }
 
-    public void setListOfTransaction(List<FundsTransferAccount> funds) {
-        this.fundsTransfer = funds;
+    public void setCashAccountHistories(List<CashAccountHistory> histories) {
+        this.cashAccountHistories = histories;
     }
 
-*/
+
 }
