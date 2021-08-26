@@ -48,12 +48,12 @@ public class InvestmentAccountController {
         return investmentAccountTotalService.getTotalValue(id) ;
     }
 
-    @RequestMapping(value = "/historicalValue/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/historicalValueById/{id}", method = RequestMethod.GET)
     public List<InvestmentAccountHistory> getInvestmentAccountHistory(@PathVariable("id") Integer id){
         return investmentAccountHistoryService.getHistoryById(id) ;
     }
 
-    @RequestMapping(value = "/historicalValue/{date}", method = RequestMethod.GET)
+    @RequestMapping(value = "/historicalValueByDate/{date}", method = RequestMethod.GET)
     public List<InvestmentAccountHistory> getInvestmentAccountHistoryByDate(@PathVariable("date") Date date){
         return investmentAccountHistoryService.getHistoryByDate(date) ;
     }
