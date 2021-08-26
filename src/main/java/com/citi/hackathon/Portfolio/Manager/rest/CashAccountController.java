@@ -1,25 +1,43 @@
 package com.citi.hackathon.Portfolio.Manager.rest;
 
 import com.citi.hackathon.Portfolio.Manager.Entites.CashAccount;
+import com.citi.hackathon.Portfolio.Manager.Entites.CashAccountHistory;
+import com.citi.hackathon.Portfolio.Manager.Entites.InvestmentAccountHistory;
+import com.citi.hackathon.Portfolio.Manager.service.CashAccountHistoryService;
 import com.citi.hackathon.Portfolio.Manager.service.CashAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 @RestController
-@RequestMapping("/Cash Account")
+@RequestMapping("/CashAccount")
 @CrossOrigin
 public class CashAccountController {
 
     @Autowired
     private CashAccountService accountService;
 
+    @Autowired
+    CashAccountHistoryService historyService;
+
     @GetMapping
     public Collection<CashAccount> getCashAccount()
     {
         return accountService.getAllCashAccount();
 
+    }
+
+    @RequestMapping(value = "/historicalValueById/{id}", method = RequestMethod.GET)
+    public List<CashAccountHistory> getCashAccountHistory(@PathVariable("id") Integer id){
+        return historyService.getHistoryById(id) ;
+    }
+
+    @RequestMapping(value = "/historicalValueByDate/{date}", method = RequestMethod.GET)
+    public List<CashAccountHistory> getCashAccountHistoryByDate(@PathVariable("date") Date date){
+        return historyService.getHistoryByDate(date) ;
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -36,6 +54,8 @@ public class CashAccountController {
     public void deleteCashAccount(@RequestBody CashAccount account) {
         accountService.deleteCashAccount(account);
     }
+
+
 
 
 }
