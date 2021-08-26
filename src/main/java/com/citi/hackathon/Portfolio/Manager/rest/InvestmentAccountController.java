@@ -11,6 +11,8 @@ import com.citi.hackathon.Portfolio.Manager.service.NetWorthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -54,8 +56,9 @@ public class InvestmentAccountController {
     }
 
     @RequestMapping(value = "/historicalValueByDate/{date}", method = RequestMethod.GET)
-    public List<InvestmentAccountHistory> getInvestmentAccountHistoryByDate(@PathVariable("date") Date date){
-        return investmentAccountHistoryService.getHistoryByDate(date) ;
+    public List<InvestmentAccountHistory> getInvestmentAccountHistoryByDate(@PathVariable("date") String date) throws ParseException {
+        Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        return investmentAccountHistoryService.getHistoryByDate(date1) ;
     }
 
 
