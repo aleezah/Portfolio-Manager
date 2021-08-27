@@ -68,7 +68,7 @@ public class InvestmentAccountController {
     }
 
     @RequestMapping(value = "/networth", method = RequestMethod.GET)
-    public Map<Date,Double> getNetWorth(){
+    public List<NetWorth> getNetWorth(){
         return netWorthService.getNetWorth() ;
     }
 

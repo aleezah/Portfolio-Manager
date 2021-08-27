@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface NetWorthService {
-    public Map<Date,Double> getNetWorth();
+    public List<NetWorth> getNetWorth();
 }

@@ -24,10 +24,12 @@ public class NetWorthServiceImpl implements NetWorthService {
     private CashAccountHistoryRepository cashDAO;
 
     @Override
-    public Map<Date,Double> getNetWorth(){
+    public List<NetWorth> getNetWorth(){
         List<InvestmentAccountHistory> investHistory = investDAO.findAll();
         List<CashAccountHistory> cashHistory = cashDAO.findAll();
         List<NetWorth> netWorthHistory = new ArrayList<NetWorth>();
+        List<NetWorth> netWorthHistory_final = new ArrayList<NetWorth>();
+
 
         for (InvestmentAccountHistory history: investHistory) {
              netWorthHistory.add(new NetWorth(history.getEntrydate(),history.getCurrentvalue()));
@@ -39,7 +41,12 @@ public class NetWorthServiceImpl implements NetWorthService {
 
         Map<Date,Double> net_worth = netWorthHistory.stream().collect(Collectors.groupingBy(NetWorth::getEntryDate,Collectors.summingDouble(NetWorth::getValue)));
 
-        return net_worth;
+        for (Map.Entry<Date,Double> history : net_worth.entrySet()) {
+            netWorthHistory_final.add(new NetWorth(history.getKey(),history.getValue()));
+
+        }
+
+        return netWorthHistory_final;
     }
 
 }
