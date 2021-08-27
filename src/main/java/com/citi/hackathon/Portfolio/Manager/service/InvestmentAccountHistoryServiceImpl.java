@@ -35,4 +35,9 @@ public class InvestmentAccountHistoryServiceImpl implements InvestmentAccountHis
     public InvestmentAccountHistory insertInvestmentAccountHistory(InvestmentAccountHistory history){
         return investmentAccountHistoryRepository.save(history);
     }
+
+    @Override
+    public List<InvestmentAccountHistory> getAllHistory() {
+        return investmentAccountHistoryRepository.findAll();
+    }
 }

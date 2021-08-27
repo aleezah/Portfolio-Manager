@@ -16,4 +16,7 @@ public interface CashAccountHistoryService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     CashAccountHistory addNewCashAccountHistory(CashAccountHistory history);
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    List<CashAccountHistory> getAllCashAccountHistory();
 }

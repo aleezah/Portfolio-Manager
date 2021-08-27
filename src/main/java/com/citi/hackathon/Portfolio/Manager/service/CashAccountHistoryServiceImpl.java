@@ -35,5 +35,8 @@ public class CashAccountHistoryServiceImpl implements CashAccountHistoryService{
         return cashAccountHistoryRepository.save(history);
     }
 
-
+    @Override
+    public List<CashAccountHistory> getAllCashAccountHistory() {
+        return cashAccountHistoryRepository.findAll();
+    }
 }

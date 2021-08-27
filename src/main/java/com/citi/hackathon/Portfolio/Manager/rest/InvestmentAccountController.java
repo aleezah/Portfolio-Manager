@@ -61,6 +61,11 @@ public class InvestmentAccountController {
         return investmentAccountHistoryService.getHistoryByDate(date1) ;
     }
 
+    @RequestMapping(value = "/historicalValue", method = RequestMethod.GET)
+    public List<InvestmentAccountHistory> getAllInvestmentAccountHistory()  {
+
+        return investmentAccountHistoryService.getAllHistory() ;
+    }
 
     @RequestMapping(value = "/networth", method = RequestMethod.GET)
     public Map<Date,Double> getNetWorth(){

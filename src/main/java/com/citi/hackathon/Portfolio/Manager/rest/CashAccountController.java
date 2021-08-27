@@ -32,6 +32,11 @@ public class CashAccountController {
 
     }
 
+    @RequestMapping(value = "/historicalValue", method = RequestMethod.GET)
+    public List<CashAccountHistory> getCashAccountHistoryAll(){
+        return historyService.getAllCashAccountHistory() ;
+    }
+
     @RequestMapping(value = "/historicalValueById/{id}", method = RequestMethod.GET)
     public List<CashAccountHistory> getCashAccountHistory(@PathVariable("id") Integer id){
         return historyService.getHistoryById(id) ;

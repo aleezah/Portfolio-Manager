@@ -16,4 +16,8 @@ public interface InvestmentAccountHistoryService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     InvestmentAccountHistory insertInvestmentAccountHistory(InvestmentAccountHistory history);
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    List<InvestmentAccountHistory> getAllHistory();
+
 }
