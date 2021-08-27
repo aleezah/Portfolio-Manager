@@ -8,10 +8,7 @@ import com.citi.hackathon.Portfolio.Manager.repo.InvestmentAccountHistoryReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,7 +38,13 @@ public class NetWorthServiceImpl implements NetWorthService {
 
         Map<Date,Double> net_worth = netWorthHistory.stream().collect(Collectors.groupingBy(NetWorth::getEntryDate,Collectors.summingDouble(NetWorth::getValue)));
 
-        for (Map.Entry<Date,Double> history : net_worth.entrySet()) {
+        Map<Date,Double> result = net_worth.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+
+        for (Map.Entry<Date,Double> history : result.entrySet()) {
             netWorthHistory_final.add(new NetWorth(history.getKey(),history.getValue()));
 
         }
